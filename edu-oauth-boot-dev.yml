@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///edu_oauth?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: "!andreaszhou"
+  security:
+    oauth2:
+      jwt:
+        signingKey: 123456
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    #启用shutdown端点，以便支持优雅停机
+    shutdown:
+      enabled: true
+# 分布式链路追踪--调整SpringBoot日志输出级别
+# logging:
+#   config: classpath:logback.xml
